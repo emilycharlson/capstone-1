@@ -10,9 +10,6 @@ import java.util.HashMap;
 
 public class Inventory {
 	
-	private static final int DEFAULT_MAX_QUANTITY = 5;
-	
-	
 	public static void vendingMachineSupply() {
 		
 				//Product 

@@ -2,9 +2,10 @@ package com.techelevator;
 
 import java.math.BigDecimal;
 
-public class Product {
+public abstract class Product {
 	
 	//Variables
+	private static final int DEFAULT_MAX_QUANTITY = 5;
 	private String name;
 	private String slotId;
 	private String type;
@@ -35,6 +36,10 @@ public class Product {
 	}
 
 	public String getType() {
+		String chips;
+		String candy;
+		String gum;
+		String drink;
 		return type;
 	}
 
