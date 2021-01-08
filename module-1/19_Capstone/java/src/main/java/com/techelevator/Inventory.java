@@ -10,8 +10,12 @@ import java.util.HashMap;
 
 public class Inventory {
 	
+	private static final int DEFAULT_MAX_QUANTITY = 5;
+	
+	
 	public static void vendingMachineSupply() {
 		
+				//Product 
 		Map<String, String> supply = new HashMap<String, String>();
 			supply.put("Cool Ranch Doritos","A1");
 			supply.put("Lays", "A2");
@@ -34,9 +38,12 @@ public class Inventory {
 			supply.put("Dr. Pepper", "D4");
 			supply.put("Blue Gatorade", "D5");
 		
-}
-	public static int quantity() {
-		//
+}	
+	
+	public static int getQuantity(int item) {
+		
+		int currentQuantity = 
+		return 0;
 	}
 	
 	
