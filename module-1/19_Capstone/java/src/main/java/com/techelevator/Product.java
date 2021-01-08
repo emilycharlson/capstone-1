@@ -2,6 +2,8 @@ package com.techelevator;
 
 import java.math.BigDecimal;
 
+
+
 public abstract class Product {
 	
 	//Variables
@@ -12,6 +14,7 @@ public abstract class Product {
 	private BigDecimal price;
 	private int quantity;
 	
+	//constructor
 	public Product(String name, String slotId, String type, BigDecimal price) {
 		this.name = name;
 		this.slotId = slotId;
@@ -35,13 +38,8 @@ public abstract class Product {
 		return slotId;
 	}
 
-	public String getType() {
-		String chips;
-		String candy;
-		String gum;
-		String drink;
-		return type;
-	}
+	public abstract String getSound();
+	
 
 	public BigDecimal getPrice() {
 		return price;
