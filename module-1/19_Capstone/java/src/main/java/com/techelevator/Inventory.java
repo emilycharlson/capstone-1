@@ -37,11 +37,7 @@ public class Inventory {
 		
 }	
 	
-	public static int getQuantity(int item) {
-		
-		int currentQuantity = 
-		return 0;
-	}
+	
 	
 	
 }

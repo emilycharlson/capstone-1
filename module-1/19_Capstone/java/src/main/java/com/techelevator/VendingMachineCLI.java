@@ -19,6 +19,13 @@ public class VendingMachineCLI {
 		this.menu = menu;
 	}
 
+	public static void main(String[] args) {
+		Menu menu = new Menu(System.in, System.out);
+		VendingMachineCLI cli = new VendingMachineCLI(menu);
+		cli.run();
+	}
+	
+	
 	public void runPurchaseMenu() {
 		while (true) {
 			String choice = (String) menu.getChoiceFromOptions(PURCHASE_MENU_OPTIONS);
@@ -47,9 +54,4 @@ public class VendingMachineCLI {
 		}
 	}
 
-	public static void main(String[] args) {
-		Menu menu = new Menu(System.in, System.out);
-		VendingMachineCLI cli = new VendingMachineCLI(menu);
-		cli.run();
-	}
 }

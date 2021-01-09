@@ -13,10 +13,6 @@ public class Chips extends Product {
 	public String getType() {
 		return this.type;
 	}
-	public CoolRanchDoritos(String type) {
-		super("Cool Ranch Doritos", "A1", TYPE, price);
-		this.type = type;
-		// TODO Auto-generated constructor stub
-	}
+
 
 }
