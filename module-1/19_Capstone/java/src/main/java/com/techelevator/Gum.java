@@ -9,7 +9,7 @@ public class Gum extends Product {
 	private static final String TYPE = "Gum";	
 	
 	
-	public Gum(String name, String slotId, BigDecimal price) {
+	public Gum(String slotId, String name, BigDecimal price) {
 		super(name, slotId, TYPE, price);
 		// TODO Auto-generated constructor stub
 	}

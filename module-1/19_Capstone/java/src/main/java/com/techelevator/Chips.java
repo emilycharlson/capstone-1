@@ -7,7 +7,7 @@ public class Chips extends Product {
 	private static final String TYPE = "Chips";	
 	
 	
-	public Chips(String name, String slotId, BigDecimal price) {
+	public Chips(String slotId, String name, BigDecimal price) {
 		super(name, slotId, TYPE, price);
 		// TODO Auto-generated constructor stub
 	}

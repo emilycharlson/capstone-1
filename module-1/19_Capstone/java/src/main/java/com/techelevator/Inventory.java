@@ -2,6 +2,7 @@ package com.techelevator;
 
 
 import java.io.PrintWriter;
+import java.math.*;
 import java.util.Scanner;
 import java.io.File;
 import java.io.FileReader;
@@ -15,9 +16,28 @@ public class Inventory {
 	
 	 
 	protected Product convertLineIntoInventory(String line) {
-		return null;
-	}
+		String[] itemSplit = line.split("|");
 		
+		String slotIdIndex = itemSplit[0].trim();
+		String itemNameIndex = itemSplit[1].trim();
+		String priceIndex = itemSplit[2].trim();
+		String typeIndex = itemSplit[3].trim();
+		
+		BigDecimal priceConversion = new BigDecimal(priceIndex);
+		
+		if(typeIndex.equalsIgnoreCase("chips")) {
+			return new Chips(slotIdIndex, itemNameIndex, priceConversion);
+		} else if (typeIndex.equalsIgnoreCase("drink")) {
+			return new Drink(slotIdIndex, itemNameIndex, priceConversion);
+		} else if (typeIndex.equalsIgnoreCase("gum")) {
+			return new Gum(slotIdIndex, itemNameIndex, priceConversion);
+		} else if (typeIndex.equalsIgnoreCase("candy")) {
+			return new Drink(slotIdIndex, itemNameIndex, priceConversion);
+		} else {
+			return null;
+	}
+	}
+
 	private Map<String, Product> loadInventory() {
 	
 	 Map<String, Product> inventory = new LinkedHashMap<String, Product>();
@@ -35,7 +55,6 @@ public class Inventory {
 			 lineNumber++;
 		 }
 	 }
-	 
 	 
 	 return inventory;
 	}

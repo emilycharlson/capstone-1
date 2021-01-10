@@ -9,7 +9,7 @@ public class Drink extends Product {
 	private static final String TYPE = "Drink";	
 	
 	
-	public Drink(String name, String slotId, BigDecimal price) {
+	public Drink(String slotId, String name, BigDecimal price) {
 		super(name, slotId, TYPE, price);
 		// TODO Auto-generated constructor stub
 	}

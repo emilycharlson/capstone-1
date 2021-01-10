@@ -15,7 +15,7 @@ public abstract class Product {
 	private int quantity;
 	
 	//constructor
-	public Product(String name, String slotId, String type, BigDecimal price) {
+	public Product(String slotId, String name, String type, BigDecimal price) {
 		this.name = name;
 		this.slotId = slotId;
 		this.type = type;

@@ -8,7 +8,7 @@ public class Candy extends Product {
 	private static final String TYPE = "Candy";	
 	
 	
-	public Candy(String name, String slotId, BigDecimal price) {
+	public Candy(String slotId, String name, BigDecimal price) {
 		super(name, slotId, TYPE, price);
 		// TODO Auto-generated constructor stub
 	}
