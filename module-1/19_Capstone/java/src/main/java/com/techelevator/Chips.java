@@ -17,10 +17,5 @@ public class Chips extends Product {
 	public String getSound() {
 		return " Crunch Crunch, Yum!";
 	}
-<<<<<<< HEAD
 
-
-=======
-	
->>>>>>> 9ae0ea09c0c3ec13f07076ab604e79bf4134b87b
 }
