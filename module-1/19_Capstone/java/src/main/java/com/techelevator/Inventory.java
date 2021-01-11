@@ -14,7 +14,8 @@ import com.techelevator.Product;
 
 public class Inventory {
 	
-	 
+	Map<String, Product> inventory = new LinkedHashMap<String, Product>();
+	
 	protected Product convertLineIntoInventory(String line) {
 		String[] itemSplit = line.split("|");
 		
@@ -38,9 +39,9 @@ public class Inventory {
 	}
 	}
 
-	private Map<String, Product> loadInventory() {
+	private void loadInventory() {
 	
-	 Map<String, Product> inventory = new LinkedHashMap<String, Product>();
+	 
 	
 	 try(Scanner scanner = new Scanner("vendingmachine.csv")) {
 		 int lineNumber = 1;
@@ -49,23 +50,22 @@ public class Inventory {
 			 Product itemInfo = convertLineIntoInventory(line);
 			 
 			 if(itemInfo != null) {
-				 inventory.put(itemInfo.getSlotId(), itemInfo);
+				 inventory.put(itemInfo.getSlotId().toUpperCase(), itemInfo);
 			 }
 			 
 			 lineNumber++;
 		 }
 	 }
 	 
-	 return inventory;
 	}
-	public Product getProductFromSlot (String slotIdLine) {
+	public Product getProductFromSlot (String slotId) {
 		
 		return this.inventory.get(slotId.toUpperCase());
 		
 	//getProduct	
 	}
 
-	
+	//create method to return list of Products to print - use EntrySet
 	
 //inventory	
 }
