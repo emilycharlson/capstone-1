@@ -32,7 +32,7 @@ public class Inventory {
 		} else if (typeIndex.equalsIgnoreCase("gum")) {
 			return new Gum(slotIdIndex, itemNameIndex, priceConversion);
 		} else if (typeIndex.equalsIgnoreCase("candy")) {
-			return new Drink(slotIdIndex, itemNameIndex, priceConversion);
+			return new Candy(slotIdIndex, itemNameIndex, priceConversion);
 		} else {
 			return null;
 	}
@@ -58,7 +58,7 @@ public class Inventory {
 	 
 	 return inventory;
 	}
-	public Product getProductFromSlot (String slotId) {
+	public Product getProductFromSlot (String slotIdLine) {
 		
 		return this.inventory.get(slotId.toUpperCase());
 		
