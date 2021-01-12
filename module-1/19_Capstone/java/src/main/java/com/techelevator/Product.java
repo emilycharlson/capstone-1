@@ -20,6 +20,7 @@ public abstract class Product {
 		this.slotId = slotId;
 		this.type = type;
 		this.price = price;
+		this.quantity = DEFAULT_MAX_QUANTITY;
 	}
 
 	public int getQuantity() {

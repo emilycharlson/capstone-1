@@ -1,5 +1,8 @@
 package com.techelevator;
 
+import java.math.BigDecimal;
+import java.util.Scanner;
+
 import com.techelevator.view.Menu;
 
 public class VendingMachineCLI {
@@ -15,6 +18,10 @@ public class VendingMachineCLI {
 
 	private Menu menu;
 
+	private Scanner userInputScanner = new Scanner(System.in);
+	private Purchase purchase = new Purchase();
+	private Inventory inventory = new Inventory();
+	
 	public VendingMachineCLI(Menu menu) {
 		this.menu = menu;
 	}
@@ -27,21 +34,26 @@ public class VendingMachineCLI {
 	
 	
 	public void runPurchaseMenu() {
+		
 		while (true) {
 			String choice = (String) menu.getChoiceFromOptions(PURCHASE_MENU_OPTIONS);
 			
 			if (choice.equals(PURCHASE_MENU_OPTION_FEED_MONEY)) {
 				System.out.println("Feed Money"); // TODO prompt for an amount
+				String moneyString = userInputScanner.nextLine(); //use if statement for valid amount
+				BigDecimal deposit = new BigDecimal(moneyString); //be sure that BigDecimal.equals(BigDecimal.valueOf(1));
+				purchase.feedMoney(deposit);
 			} else if (choice.equals(PURCHASE_MENU_OPTION_SELECT_PRODUCT)) {
-				System.out.println("Select Product");
+				System.out.println("Select Product"); //getProductFromSlot and purchase
 			} else if (choice.equals(PURCHASE_MENU_OPTION_FINISH_TRANSACTION)) {
-				System.out.println("Finish Transaction"); // TODO make change
+				System.out.println("Finish Transaction"); // Purchase
 				return;
 			}
 		}
 	}
 	
 	public void run() {
+		this.inventory.loadInventory();
 		while (true) {
 			String choice = (String) menu.getChoiceFromOptions(MAIN_MENU_OPTIONS);
 

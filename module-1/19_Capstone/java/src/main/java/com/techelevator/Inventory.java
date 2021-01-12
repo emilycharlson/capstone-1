@@ -39,7 +39,7 @@ public class Inventory {
 	}
 	}
 
-	private void loadInventory() {
+	public void loadInventory() {
 	
 	 
 	

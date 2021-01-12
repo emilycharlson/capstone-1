@@ -26,14 +26,14 @@ public class Purchase {
 	}
 	// ***Select Product***
 	
-
-	public String selectProduct() {
-		return null;
-	}
+	// create buyProduct()
+	
 	
 	// ***Finish Transaction***
 	
-	public BigDecimal finishTransaction() {
-		return null;
+	public String finishTransaction() {
+		
+		this.balance = BigDecimal.ZERO;
+		return null; //returns number of quarters, dimes, etc.
 }
 }
