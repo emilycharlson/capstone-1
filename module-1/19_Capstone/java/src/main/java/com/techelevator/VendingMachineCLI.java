@@ -59,7 +59,7 @@ public class VendingMachineCLI {
 
 			if (choice.equals(MAIN_MENU_OPTION_DISPLAY_ITEMS)) {
 			
-				System.out.println("items");// display vending machine items
+				System.out.println("Select an Item: ");// display vending machine items
 			} else if (choice.equals(MAIN_MENU_OPTION_PURCHASE)) {
 				runPurchaseMenu();// do purchase
 			}
