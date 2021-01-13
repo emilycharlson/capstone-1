@@ -1,6 +1,7 @@
 package com.techelevator;
 
 import java.math.BigDecimal;
+import com.techelevator.Inventory;
 import java.util.Scanner;
 
 import com.techelevator.view.Menu;
@@ -21,6 +22,8 @@ public class VendingMachineCLI {
 	private Scanner userInputScanner = new Scanner(System.in);
 	private Purchase purchase = new Purchase();
 	private Inventory inventory = new Inventory();
+	// private Object option = new Object();
+	
 	
 	public VendingMachineCLI(Menu menu) {
 		this.menu = menu;
@@ -45,6 +48,7 @@ public class VendingMachineCLI {
 				purchase.feedMoney(deposit);
 			} else if (choice.equals(PURCHASE_MENU_OPTION_SELECT_PRODUCT)) {
 				System.out.println("Select Product"); //getProductFromSlot and purchase
+				menu.getChoiceFromUserInput();
 			} else if (choice.equals(PURCHASE_MENU_OPTION_FINISH_TRANSACTION)) {
 				System.out.println("Finish Transaction"); // Purchase
 				return;
@@ -58,8 +62,8 @@ public class VendingMachineCLI {
 			String choice = (String) menu.getChoiceFromOptions(MAIN_MENU_OPTIONS);
 
 			if (choice.equals(MAIN_MENU_OPTION_DISPLAY_ITEMS)) {
-			
 				System.out.println("Select an Item: ");// display vending machine items
+				inventory.displayVendingItems();
 			} else if (choice.equals(MAIN_MENU_OPTION_PURCHASE)) {
 				runPurchaseMenu();// do purchase
 			}
