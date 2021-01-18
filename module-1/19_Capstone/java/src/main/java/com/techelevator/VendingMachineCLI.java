@@ -22,7 +22,7 @@ public class VendingMachineCLI {
 	private Scanner userInputScanner = new Scanner(System.in);
 	private Purchase purchase = new Purchase();
 	private Inventory inventory = new Inventory();
-	// private Object option = new Object();
+	private Object option = new Object();
 	
 	
 	public VendingMachineCLI(Menu menu) {
@@ -48,7 +48,10 @@ public class VendingMachineCLI {
 				purchase.feedMoney(deposit);
 			} else if (choice.equals(PURCHASE_MENU_OPTION_SELECT_PRODUCT)) {
 				System.out.println("Select Product"); //getProductFromSlot and purchase
-				menu.getChoiceFromUserInput();
+				
+				Object[] selection = {};
+				
+				option.getChoiceFromUserInput(selection);
 			} else if (choice.equals(PURCHASE_MENU_OPTION_FINISH_TRANSACTION)) {
 				System.out.println("Finish Transaction"); // Purchase
 				return;
